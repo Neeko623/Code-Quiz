@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!--This is a header-->
+    <header>
+        <h2>
+            <a href="">View high scores</a>
+        </h2>
+    <div>
+        <h2>Timer:
+        <span id="countdown">75</span>
+        </h2>
+    </div>
+    </header>
+
+    <!--This is main content-->
+<main class= "page-content">
+    <div class="intro-container">
+
+    <!--Introduction Page-->
+    <section class="intro-page" id="intro-page">
+            <h1 class=“quiz-title”>Coding Quiz Challenge</h1>
+                <p>Try to answer the following code-related questions within the time limit.</p>
+                <p>Keep in mind that incorrect answers will penalized your score/time by ten seconds!</p>
+         <div>
+                <button class="btn" id="Start-Quiz" type="submit">Start Quiz</button>
+         </div>
+    </section>
+
+    <!--Questions Page-->
+    <section id="firstquestion" class="firstquestion">
+            <h2 id="questions" class="questions">This is sententce</h2>
+            <ol>
+                <li><button type="button" id="answer1" class="answer">option1</button></li>
+                <li><button type="button" id="answer2" class="answer">option2</button></li>
+                <li><button type="button" id="answer3" class="answer">option3</button></li>
+                <li><button type="button" id="answer4" class="answer">option4</button></li>
+            </ol>
+        <hr/>
+        <div id="answer" class="answerstyle"></div>
+    </section>
+   
+
+    <!--Submit Score Page-->
+    <section id="highscores" class="highscores">
+        <div class="scorepage-container">
+            <h1>All done!</h1>
+           <p>Your final score is<span id="score1"></span></p>
+           <label class="s-label" for="display-text">Enter Initials:</label>
+                <input type="text" id="display-name" text=" ">
+                </div>
+                <div>
+                <button class="score-btn" id="save-score">Submit</button>
+               </div>
+        </div>
+   </section>
+
+   <!--Display Score Page-->
+   <section id="checkhighscore" class="checkhighscore">
+        <div class="highscorepage-container">
+             <h1>High Scores</h1>
+            <div id="Highscorelist" class="scorelist">
+            <div class="grid">
+                 <input class="s-input" id="display-score" name="display-score">
+             </div>
+                <button class="score-btn" id="back-btn" type="submit">Go back</button>
+                <button class="score-btn" id="clear-score" type="submit">Clear high scores</button>
+            </div>
+        </div>
+    </section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
