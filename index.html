@@ -11,7 +11,7 @@
     <!--This is a header-->
     <header>
         <h2>
-            <a href="">View high scores</a>
+            <a href=" " id="viewscorepage">View high scores</a>
         </h2>
     <div>
         <h2>Timer:
@@ -46,7 +46,7 @@
         <hr/>
         <div id="answer" class="answerstyle"></div>
     </section>
-   
+
 
     <!--Submit Score Page-->
     <section id="highscores" class="highscores">
@@ -66,9 +66,11 @@
    <section id="checkhighscore" class="checkhighscore">
         <div class="highscorepage-container">
              <h1>High Scores</h1>
-            <div id="Highscorelist" class="scorelist">
+            <div id="highscorelist" class="scorelist">
             <div class="grid">
-                 <input class="s-input" id="display-score" name="display-score">
+              <ul id="usernameandscore">
+
+              </ul>
              </div>
                 <button class="score-btn" id="back-btn" type="submit">Go back</button>
                 <button class="score-btn" id="clear-score" type="submit">Clear high scores</button>
