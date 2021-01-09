@@ -4,7 +4,7 @@ var penalty = 10;
 var scorenumber = document.getElementById("score1");
 var finalscore = document.getElementById("display-score");
 var scorenumber = 0;
-var rightScore = 25;
+var rightScore = 0;
 
 var counter = document.getElementById("countdown");
 var Btn = document.getElementById("Start-Quiz");
@@ -28,7 +28,9 @@ var Title;
 var Option;
 var Answer;
 
+var UserRecord = [];
 
+localStorage.setItem("UserRecord", JSON.stringify(UserRecord));
 
 // questions list
 var questions = [{
@@ -90,9 +92,10 @@ function getQuestion() {
 function getQuestionJudge(i){
     progress += 1;
     scorenumber = 0;
-    if(Option[i - 1] === Answer){
+    if(Option[i - 1] === Answer) {
         checkAnswer.innerHTML = "Correct!";
         rightScore += 25;
+        console.log(rightScore);
     }else{
         checkAnswer.innerHTML = "Wrong!";
         timeremain -= penalty;
@@ -146,42 +149,59 @@ answerBtn4.addEventListener("click", function () {
     getQuestion();
 })
 
-//create array to hold tasks for saving
-var usernameinitial = function(event){
-    event.preventDefault();
-    var userNameInput = document.querySelector("display-name").value;
-
-    if (!userNameInput) {
-        alert("Enter Initials");
-        return getEndQuiz();
-      }
-    var data = {
-    name: userNameInput,
-    score: ""
-      };
-}
-
 // display end quiz pages
 function getEndQuiz(){
     document.getElementById("firstquestion").style.display = "none";
     document.getElementById("highscores").style.display = "block";
+    document.getElementById("score1").textContent = " " + rightScore;
 }
 
 submitscoreBtn.addEventListener("click", function() {
+
+    console.log(localStorage.getItem("UserRecord"));
+
+    let userInput = JSON.parse(localStorage.getItem("UserRecord"))
     document.getElementById("checkhighscore").style.display = "block";
     document.getElementById("firstquestion").style.display = "none";
     document.getElementById("highscores").style.display = "none";
-    })
 
+    let initial = document.getElementById("display-name").value;
+
+    userInput.push({"initial": initial, "score": rightScore});
+
+    console.log(userInput);
+
+    localStorage.setItem("UserRecord", JSON.stringify(userInput));
+
+    let userList = document.getElementById("usernameandscore");
+
+    userList.innerHTML = "";
+
+    userInput.forEach(function(item, i) {
+      let textNodeContent = item["initial"] + " " + item["score"];
+
+      console.log(i, item);
+      let eachLi = document.createElement("LI");
+      let textNode = document.createTextNode(textNodeContent);
+      eachLi.appendChild(textNode);
+
+      let userList = document.getElementById("usernameandscore");
+
+      userList.appendChild(eachLi);
+    });
+
+})
 
 // click handlers for restart and clearing scoreboard
 gobackBtn.addEventListener("click", function(){
     introduction.style.display = "block";
     document.getElementById("checkhighscore").style.display = "none";
-    getQuestion();
+    progress = 0;
+    timeremain = 75;
 });
 
 document.getElementById("clear-score").onclick = function(){
-    getQuestion();
+    localStorage.setItem("UserRecord", JSON.stringify([]));
+    let userList = document.getElementById("usernameandscore");
+    userList.innerHTML = "";
 };
-
