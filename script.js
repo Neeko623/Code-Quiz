@@ -179,7 +179,6 @@ submitscoreBtn.addEventListener("click", function() {
 
     userInput.forEach(function(item, i) {
       let textNodeContent = item["initial"] + " " + item["score"];
-
       console.log(i, item);
       let eachLi = document.createElement("LI");
       let textNode = document.createTextNode(textNodeContent);
@@ -191,6 +190,14 @@ submitscoreBtn.addEventListener("click", function() {
     });
 
 })
+var showscorepage = document.getElementById('viewscorepage');
+showscorepage.addEventListener("click", function(event){
+    event.preventDefault();
+    document.getElementById("checkhighscore").style.display = "block";
+    introduction.style.display = "none";
+
+});
+
 
 // click handlers for restart and clearing scoreboard
 gobackBtn.addEventListener("click", function(){
