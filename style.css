@@ -94,15 +94,9 @@ p,h2 {
   text-align: left;
   display: flex;
 }
-
 hr {
   border-top: 1px solid var(#ECECEC);
 }
-
-ol {
-  list-style-type: none;
-}
-
 .highscorepage-container {
   text-align: center;
   width: 80%;

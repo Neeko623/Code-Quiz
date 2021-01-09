@@ -58,7 +58,7 @@ var questions = [{
 
 //countdown timer setup
 
-var startCountdown =null;
+var startCountdown = null;
 function countdown(){
     clearInterval(startCountdown);
     startCountdown = window.setInterval(function(){
@@ -178,7 +178,7 @@ submitscoreBtn.addEventListener("click", function() {
     userList.innerHTML = "";
 
     userInput.forEach(function(item, i) {
-      let textNodeContent = item["initial"] + " " + item["score"];
+      let textNodeContent = item["initial"] + " " + "-" + " " + item["score"];
       console.log(i, item);
       let eachLi = document.createElement("LI");
       let textNode = document.createTextNode(textNodeContent);
@@ -204,7 +204,9 @@ gobackBtn.addEventListener("click", function(){
     introduction.style.display = "block";
     document.getElementById("checkhighscore").style.display = "none";
     progress = 0;
+    counter.textContent = "75";
     timeremain = 75;
+    console.log(timeremain)
 });
 
 document.getElementById("clear-score").onclick = function(){
