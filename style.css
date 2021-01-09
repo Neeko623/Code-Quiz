@@ -1,6 +1,8 @@
 * {
     box-sizing: border-box;
   }
+
+/* This is color theme */
 :root{
   --primary: #2e1568;
   --secondary: #b74ce2;
@@ -8,24 +10,37 @@
   --pink:#be8ab6;
   --blue : #20639B
 }
-  header {
-    display: flex;
-    justify-content: space-between;
-    padding: 30px 50px 30px 50px;
-    margin-bottom: 15px;
-    font-weight: bold;
-    font-size: 1.25rem;
-    color: var(--blue);
-    }
 
-  main {
-    font-size: 2rem;
-    width: 80%;
-    margin: 30px auto;
-    padding: 50px;
-    background-color: #fefeff;
-  }
+/* This is a header */
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 50px 30px 50px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: var(--blue);
+}
 
+/* This is a main */
+main {
+  font-size: 2rem;
+  width: 80%;
+  margin: 30px auto;
+  padding: 50px;
+  background-color: #fefeff;
+}
+
+p,h2 {
+  font-size: 1rem;
+  text-align: center;
+}
+
+hr {
+  border-top: 1px solid var(#ECECEC);
+}
+
+  /* These are containers for each section */
 .intro-container {
   text-align: center;
 }
@@ -36,18 +51,22 @@
   font-size: 1.5rem;
 }
 
-p,h2 {
-      font-size: 1rem;
-      text-align: center;
-  }
-
 .flex-cointainer{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
 }
 
+.highscorepage-container {
+  text-align: center;
+  width: 80%;
+  margin: 30px auto;
+  padding: 50px;
+  background-color: #fefeff;
+}
+
+/* Submit button style */
 .btn, .score-btn{
   outline: none;
   border: none;
@@ -59,6 +78,7 @@ p,h2 {
   border-radius: 12px;
 }
 
+/* Multiple Choice button style */
 .btn:hover, .answer:hover {
     background-color: var(--secondary);
     color: white;
@@ -94,16 +114,7 @@ p,h2 {
   text-align: left;
   display: flex;
 }
-hr {
-  border-top: 1px solid var(#ECECEC);
-}
-.highscorepage-container {
-  text-align: center;
-  width: 80%;
-  margin: 30px auto;
-  padding: 50px;
-  background-color: #fefeff;
-}
+
 
 #firstquestion  {
   display: none;

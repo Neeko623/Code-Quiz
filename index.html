@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Required Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Required Meta Tags -->
     <title>Code Quiz</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -11,17 +14,20 @@
     <!--This is a header-->
     <header>
         <h2>
+            <!-- <a href="">View Highscores</a> -->
             <a href=" " id="viewscorepage">View high scores</a>
         </h2>
     <div>
+        <!-- Timer -->
         <h2>Timer:
-        <span id="countdown">75</span>
+            <span id="countdown">75</span>
         </h2>
     </div>
     </header>
 
     <!--This is main content-->
 <main class= "page-content">
+    <!-- Container for Intro, Questions, Answers -->
     <div class="intro-container">
 
     <!--Introduction Page-->
@@ -34,7 +40,7 @@
          </div>
     </section>
 
-    <!--Questions Page-->
+    <!-- Section for Question and Answers // Show upon Start-->
     <section id="firstquestion" class="firstquestion">
             <h2 id="questions" class="questions">This is sententce</h2>
             <ol>
@@ -43,32 +49,36 @@
                 <li><button type="button" id="answer3" class="answer">option3</button></li>
                 <li><button type="button" id="answer4" class="answer">option4</button></li>
             </ol>
-        <hr/>
-        <div id="answer" class="answerstyle"></div>
+            <hr/>
+        <div id="answer" class="answerstyle">
+        </div>
     </section>
 
 
-    <!--Submit Score Page-->
+    <!-- Section for Final Score and Name -->
     <section id="highscores" class="highscores">
         <div class="scorepage-container">
             <h1>All done!</h1>
            <p>Your final score is<span id="score1"></span></p>
            <label class="s-label" for="display-text">Enter Initials:</label>
                 <input type="text" id="display-name" text=" ">
-                </div>
+            <div>
                 <br>
+            </div>
                 <div>
-                <button class="score-btn" id="save-score">Submit</button>
+                    <button class="score-btn" id="save-score">Submit</button>
                </div>
         </div>
    </section>
 
-   <!--Display Score Page-->
+   <!-- Section for High Scores -->
    <section id="checkhighscore" class="checkhighscore">
         <div class="highscorepage-container">
              <h1>High Scores</h1>
+             <!-- High scores should be added as a sorted desc list -->
             <div id="highscorelist" class="scorelist">
               <ol id="usernameandscore">
+                  <!-- <li></li> -->
               </ol>
                 <button class="score-btn" id="back-btn" type="submit">Go back</button>
                 <button class="score-btn" id="clear-score" type="submit">Clear high scores</button>
@@ -76,6 +86,7 @@
         </div>
     </section>
 </main>
+ <!-- Javascript  -->
 <script src="script.js"></script>
 </body>
 </html>
